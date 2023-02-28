@@ -719,7 +719,8 @@ def andom():
             speede.map(start, accounts)
     else:
        with speed(max_workers=30) as speede:
-            speede.map(start, accounts)
+        
+    speede.map(start, accounts)
     exit()
 
 
