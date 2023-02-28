@@ -95,7 +95,7 @@ logo= f'''
 \033[1;93m=================================
 \033[1;96m Owner  : MUNIR MATYANA 
 \033[1;96m GitHub : MUNIR MATYANA 
-\033[1;97m Version:\033[1;92m 7.86 \033[1;97m
+\033[1;97m Version:7.86
 \033[1;92m Status : PAID
 \033[1;91m Notice : Use 10009/10008 For More OK Ids 
 \033[1;93m=================================
@@ -149,18 +149,18 @@ def file():
    
 ####@-----AppCheck-----@####
 def check(session,coki):
-    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
+    w=session.get("https://graph.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
     sop = BeautifulSoup(w,"html.parser")
-    x = sop.find("form",method="post")
+    x = sop.find("form",method="GET")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
     	pass
     else:
         for gm in game:
             print(f"\033[1;97m---\033[1;96m"+gm.replace('huwtn',' hxw-code=hannan-33'))
-    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
+    w=session.get("https://graph.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
     sop = BeautifulSoup(w,"html.parser")
-    x = sop.find("form",method="post")
+    x = sop.find("form",method="GET")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
         pass
